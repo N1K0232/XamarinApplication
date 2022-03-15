@@ -19,7 +19,7 @@ namespace XamarinApplication.Core.Models
 
         public override string ToString()
         {
-            StringBuilder builder = new();
+            StringBuilder builder = new StringBuilder();
             builder.AppendLine($"Name: {Name}");
             builder.AppendLine($"Region: {Region}");
             builder.AppendLine($"Country: {Country}");

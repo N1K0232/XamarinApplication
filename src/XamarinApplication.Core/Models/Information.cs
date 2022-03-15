@@ -17,7 +17,7 @@ namespace XamarinApplication.Core.Models
 
         public override string ToString()
         {
-            StringBuilder builder = new();
+            StringBuilder builder = new StringBuilder();
             builder.AppendLine($"Text: {Text}");
             builder.AppendLine($"Icon: {Icon}");
             builder.AppendLine($"Temperature: {Temperature.Value}");

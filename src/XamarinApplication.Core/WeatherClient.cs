@@ -54,7 +54,7 @@ namespace XamarinApplication.Core
                 text = deserialized["current"]?["condition"]?["text"]?.ToString();
                 icon = deserialized["current"]?["condition"]?["icon"]?.ToString();
                 location = deserialized["location"]?.ToObject<Location>();
-                information = new(text, icon, temperature);
+                information = new Information(text, icon, temperature);
             }
             catch (NullReferenceException)
             {
