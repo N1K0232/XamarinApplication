@@ -1,7 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
 using System.Net.Http;
-using System.Security;
 using System.Threading.Tasks;
 using XamarinApplication.Core.Models;
 
@@ -9,10 +8,6 @@ namespace XamarinApplication.Core
 {
     public class WeatherClient : IWeatherClient
     {
-        private const string ApiKey = "7f4389ff11a94fd4938110520212306";
-        private const string BaseUrl = "http://api.weatherapi.com//v1//current.json?key/=";
-
-        private string url = "";
         private string result = null;
 
         private string text = "";
@@ -26,28 +21,12 @@ namespace XamarinApplication.Core
             this.httpClient = httpClient;
         }
 
-        private void CreateUrl()
-        {
-            try
-            {
-                url = $"{BaseUrl}{ApiKey}";
-            }
-            catch (ArgumentNullException ex)
-            {
-                throw ex;
-            }
-            catch (SecurityException ex)
-            {
-                throw ex;
-            }
-        }
-
         public async Task<Response> SearchAsync(string city)
         {
             Location location;
             Information information;
 
-            url += $"&q={city}&aqi=no";
+            string url = $"&q={city}&aqi=no";
 
             try
             {
